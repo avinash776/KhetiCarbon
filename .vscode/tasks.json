@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "serve-index-html",
+			"type": "shell",
+			"command": "powershell -NoLogo -NoProfile -Command \"Start-Process -FilePath msedge.exe -ArgumentList 'file:///c:/Avi%20project/hack/index.html'\"",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "serve-localhost",
+			"type": "shell",
+			"command": "powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -File \"c:/Avi project/hack/serve.ps1\" -Port 8000",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "install-kheti-deps",
+			"type": "shell",
+			"command": "cmd /c \"cd /d \"c:\\Avi project\\hack\\kheti-app\" && npm install\"",
+			"problemMatcher": [
+				"$eslint-stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "dev-kheti-app",
+			"type": "shell",
+			"command": "cmd /c \"cd /d \"c:\\Avi project\\hack\\kheti-app\" && npm run dev\"",
+			"isBackground": true,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		}
+	]
+}
